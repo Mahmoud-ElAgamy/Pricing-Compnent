@@ -1,0 +1,224 @@
+/* Custom Properties */
+:root {
+  /* Colors */
+  --txt-color: hsl(232, 13%, 33%);
+  --main-transition: 0.2s ease-in-out;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* General Styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.938rem;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: var(--txt-color);
+  display: grid;
+  place-content: center;
+  padding: 1.5rem;
+}
+
+button {
+  font: inherit;
+}
+
+/* Utility Classes */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.d-none {
+  display: none;
+}
+
+.m-b25 {
+  margin-bottom: 25px;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1440px;
+  position: relative;
+  z-index: 1;
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+}
+
+svg:first-of-type {
+  right: 0;
+}
+
+svg:last-of-type {
+  left: 0;
+  bottom: 0;
+}
+
+/* Billing Section */
+.billing {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: hsl(234, 14%, 74%);
+}
+
+.billing span {
+  transition: var(--main-transition);
+}
+
+.billing span.default {
+  color: hsl(233, 13%, 49%);
+}
+
+.billing .checkbox {
+  position: relative;
+}
+
+.billing .checkbox input {
+  appearance: none;
+  background-color: #7173df;
+  width: 58px;
+  height: 28px;
+  border-radius: calc(infinity * 1px);
+  cursor: pointer;
+}
+
+.billing .checkbox::before {
+  content: "\f104";
+  font-family: "Font Awesome 6 Free";
+  font-weight: bold;
+  color: hsl(233, 13%, 49%);
+  line-height: 19px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  background-color: hsl(240, 78%, 98%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: var(--main-transition);
+}
+
+.billing .checkbox:has(input:checked)::before {
+  left: 34px;
+  top: 4px;
+  transform: rotate(180deg);
+}
+
+/* Cards Section */
+.cards-container {
+  display: flex;
+  place-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cards-container .card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 310px;
+  transition: var(--main-transition);
+}
+
+.cards-container .card:hover {
+  box-shadow: 0 0 10px #ddd;
+  transform: translateY(-10px);
+}
+
+.cards-container .card .meta {
+  border-bottom: 1px solid #dddddd81;
+  padding: 1rem;
+}
+
+.cards-container .card .price {
+  font-size: 3rem;
+  text-wrap: nowrap;
+}
+
+@media (max-width: 767px) {
+  .cards-container .card .price {
+    font-size: 2rem;
+  }
+}
+
+.cards-container .card .features li {
+  border-bottom: 1px solid #dddddd77;
+  padding: 1.2rem;
+}
+
+.cards-container .card .btn {
+  appearance: none;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--main-transition);
+  background-color: #7173df;
+  color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  letter-spacing: 1.5px;
+}
+
+.cards-container .card .btn::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  transition: var(--main-transition);
+  z-index: -1;
+  transform: skew(35deg);
+}
+
+.cards-container .card.highlighted .btn::before {
+  background-color: #7173df;
+}
+
+.cards-container .card .btn:hover::before {
+  width: 115%;
+}
+
+.cards-container .card .btn:hover {
+  color: var(--txt-color);
+}
+
+.cards-container .card.highlighted .btn:hover {
+  color: #f5f5f5;
+}
+
+.cards-container .card.highlighted {
+  background-color: #7173df;
+  color: #f5f5f5;
+}
+
+.cards-container .card.highlighted .btn {
+  background-color: #f5f5f5;
+  color: #7173df;
+}
