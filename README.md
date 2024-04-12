@@ -4,4 +4,4 @@
 
 ## Welcome! 👋
 
-Preview [./images/url.png](https://mahmoud-elagamy.github.io/Pricing-Compnent/)
+Preview (./images/url.png) (https://mahmoud-elagamy.github.io/Pricing-Compnent/)
