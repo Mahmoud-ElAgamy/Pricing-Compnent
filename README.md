@@ -4,4 +4,4 @@
 
 ## Welcome! 👋
 
-Preview Site (🔗) (https://mahmoud-elagamy.github.io/Pricing-Compnent/)git
+Preview Site (🔗) (https://mahmoud-elagamy.github.io/Pricing-Compnent/)
