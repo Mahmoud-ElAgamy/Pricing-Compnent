@@ -26,6 +26,7 @@ body {
   display: grid;
   place-content: center;
   padding: 1.5rem;
+  position: relative;
 }
 
 button {
@@ -50,12 +51,7 @@ button {
   text-align: center;
 }
 
-.container {
-  max-width: 1440px;
-  position: relative;
-  z-index: 1;
-}
-
+/* SVGS */
 svg {
   position: absolute;
   z-index: -1;
